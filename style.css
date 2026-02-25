@@ -1,75 +1,143 @@
-body {
+/* Global Reset */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: 'Segoe UI', sans-serif;
     background: #f8fafc;
     color: #1e293b;
     scroll-behavior: smooth;
+    line-height: 1.6;
 }
 
+/* Header */
 header {
     text-align: center;
-    padding: 80px 20px;
+    padding: 70px 20px;
     background: white;
 }
 
 h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 34px;
+    margin-bottom: 8px;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
+header p {
+    font-size: 16px;
+    color: #475569;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
+.buttons {
+    margin-top: 20px;
 }
 
 .btn {
     display: inline-block;
-    margin: 10px;
+    margin: 6px;
     padding: 10px 20px;
     background: #2563eb;
     color: white;
     text-decoration: none;
     border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s ease;
 }
 
+.btn:hover {
+    background: #1d4ed8;
+}
+
+/* Sections */
+section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Snapshot Grid */
 .snapshot .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
     text-align: center;
+    margin-top: 15px;
 }
 
+.snapshot .grid div {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    font-size: 14px;
+}
+
+/* Skills Grid */
 .skills {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
+.skills div {
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.skills h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Cards */
 .card {
     background: white;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
 }
 
-ul {
-    padding-left: 20px;
+.card h3 {
+    margin-bottom: 5px;
+    font-size: 17px;
 }
 
+.date {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.card ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 30px;
+    padding: 25px;
     background: #e2e8f0;
+    font-size: 14px;
 }
 
-/* Sidebar */
+/* Sidebar - Desktop */
 .sidebar {
     position: fixed;
     right: 20px;
@@ -84,10 +152,10 @@ footer {
 .sidebar a {
     background: #1e293b;
     color: white;
-    padding: 10px 14px;
+    padding: 9px 12px;
     text-decoration: none;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     transition: 0.3s;
 }
@@ -96,8 +164,36 @@ footer {
     background: #2563eb;
 }
 
-/* Mobile View */
+/* Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
+
+    header {
+        padding: 50px 15px;
+    }
+
+    section {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
 
     .sidebar {
         position: fixed;
@@ -107,12 +203,12 @@ footer {
         transform: none;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
         justify-content: flex-end;
     }
 
     .sidebar a {
-        font-size: 12px;
-        padding: 8px 10px;
+        font-size: 11px;
+        padding: 7px 9px;
     }
 }
