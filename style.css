@@ -73,30 +73,46 @@ footer {
 .sidebar {
     position: fixed;
     right: 20px;
-    top: 200px;
+    top: 40%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 10px;
+    z-index: 1000;
 }
 
 .sidebar a {
     background: #1e293b;
     color: white;
-    padding: 10px;
+    padding: 10px 14px;
     text-decoration: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
+    transition: 0.3s;
 }
 
-/* Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.8s ease;
+.sidebar a:hover {
+    background: #2563eb;
 }
 
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+/* Mobile View */
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+    }
+
+    .sidebar a {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
 }
